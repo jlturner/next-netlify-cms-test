@@ -1,4 +1,4 @@
-import CMS from 'netlify-cms-app'
+import CMS from 'netlify-cms'
 import Homepage from "./Homepage";
 
 function handleChange(entry, f) {
@@ -8,6 +8,8 @@ function handleChange(entry, f) {
     (<div>Loading...</div>); // TODO: make this a spinner!
 }
 
-CMS.registerPreviewTemplate('index', ({ entry, getAsset }) => {
-  handleChange(entry, data => (<Homepage title={data.title} cats={data.cats} />));
+CMS.registerPreviewTemplate('index', ({ entry, getAsset, widgetFor }) => {
+  handleChange(entry, data => (<Homepage title={data.title} cats={data.cats}>{widgetFor('body')}</Homepage>));
 });
+
+export default CMS;

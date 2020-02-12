@@ -1,8 +1,8 @@
 import Layout from "./Layout";
 
-export default (title, cats) => {
+export default (props) => {
+  const {cats, title} = props;
   return ( <Layout>
-      <BodyContent />
       <ul>
         {cats.map((cat, k) => (
           <li key={k}>
@@ -11,4 +11,5 @@ export default (title, cats) => {
           </li>
         ))}
       </ul>
+      {props.children}
     </Layout> )};
