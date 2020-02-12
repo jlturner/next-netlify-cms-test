@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app'
-import Homepage from "../components/Homepage";
+import Homepage from "./Homepage";
 
 function handleChange(entry, f) {
   const data = entry.getIn(['data']).toJS();
