@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
-const CMSDynamic = dynamic(() => import('../components/CMSPage'));
+const CMSDynamic = dynamic(() => import('../components/CMSPage'), { ssr: false });
 
 export default () => {
   return(<>
